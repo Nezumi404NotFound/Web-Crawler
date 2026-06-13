@@ -8,7 +8,9 @@ def download_youtube_audio(video_url):
 	# 配置后处理组件（使用 ffmpeg 提取并转换音频）
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
+	# 转换为 mp3 格式 (也可以选 m4a, wav, flac 等)
             'preferredcodec': 'mp3',
+	# 音频比特率 (如 192, 256, 320)
             'preferredquality': '192',
         }],
 	
@@ -27,5 +29,5 @@ def download_youtube_audio(video_url):
 if __name__ == "__main__":
 
 	# 替换为你想要下载的 YouTube 视频链接
-  	url = "https://www.youtube.com/watch?v=JK_hBk2f01k&list=RDJK_hBk2f01k&start_radio=1"
+  	url = ""
   	download_youtube_audio(url)
